@@ -1,7 +1,5 @@
 package Foundation;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
-
 import java.util.*;
 
 public class MyArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable, Iterable<E> {
@@ -123,5 +121,7 @@ public class MyArrayList<E> extends AbstractList<E> implements List<E>, RandomAc
         public E next() {
             return element_data[--i];
         }
+
+        public void remove(){}
     }
 }

@@ -6,7 +6,7 @@ public class ThreadCommunication {
 
 
     public static void main(String[] args) {
-        Factory f = new Factory();
+        final Factory f = new Factory();
         Thread t1 = new Thread(new Runnable() {
             boolean stopFlag = false;
             @Override

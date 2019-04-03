@@ -6,7 +6,7 @@ public class SynchronizedTest {
 //    }
     public static void main(String[] args) throws InterruptedException {
 
-        synchronizedMethod sy = new synchronizedMethod();
+        final synchronizedMethod sy = new synchronizedMethod();
         Thread t1 = new Thread(new Runnable(){
             @Override
             public void run() {
