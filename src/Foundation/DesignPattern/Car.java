@@ -1,6 +1,7 @@
 package Foundation.DesignPattern;
 
 public interface Car {
-    String Id = "";
-    public void run();
+    String Id = "Car";
+    void run();
+    String getId();
 }

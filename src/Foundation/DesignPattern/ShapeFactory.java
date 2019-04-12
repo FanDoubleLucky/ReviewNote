@@ -3,7 +3,7 @@ package Foundation.DesignPattern;
 /*
 Shape的工厂类
  */
-public class ShapeFactory {
+public class ShapeFactory extends AbstactFactory{
 
     public Shape getShape(String shapeType){
         if (shapeType==null){
@@ -15,6 +15,10 @@ public class ShapeFactory {
         else if(shapeType.equalsIgnoreCase("RECTANGLE")){
             return new Rectangle();
         }
+        return null;
+    }
+
+    public Color getColor(String color){
         return null;
     }
 }

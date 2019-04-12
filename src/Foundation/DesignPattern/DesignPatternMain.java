@@ -11,5 +11,12 @@ public class DesignPatternMain {
         ShapeFactory sf = new ShapeFactory();
         Shape shape = sf.getShape("Circle");
         shape.draw();
+
+
+        Benz benz = new Benz();
+        benz.Id = "Benz";
+        Driver driver = new Driver();
+        driver.setCar(benz);
+        driver.drive();
     }
 }
