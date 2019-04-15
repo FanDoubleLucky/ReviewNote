@@ -27,5 +27,11 @@ public class StringInternAndWeakref {
         System.out.println(BW.get());//会被GC
         System.out.println(CW.get());
         System.out.println(DW.get());
+
+        String s3 = new String("1") + new String("1");
+        s3.intern();
+        String s4 = "11";
+//        s3 = s3.intern();
+        System.out.println(s3==s4);
     }
 }
