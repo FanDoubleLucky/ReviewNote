@@ -31,7 +31,7 @@ public class StringInternAndWeakref {
         String s3 = new String("1") + new String("1");
         s3.intern();
         String s4 = "11";
-//        s3 = s3.intern();
+//        s3.intern();
         System.out.println(s3==s4);
     }
 }
