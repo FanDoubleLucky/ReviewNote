@@ -6,7 +6,6 @@ public class Animal {
         System.out.println("All animal can eat");
     }
 
-
     public void call(){
         System.out.println("...");
     }

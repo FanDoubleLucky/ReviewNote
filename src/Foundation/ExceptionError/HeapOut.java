@@ -12,8 +12,13 @@ public class HeapOut {
 
     public static void main(String[] args) {
         ArrayList<HeapOOM> a = new ArrayList<>();
-        while (true){
-            a.add(new HeapOOM());
+        try {
+            while (true){
+                a.add(new HeapOOM());
+            }
+        } catch (Error e) {
+            e.printStackTrace();
+            System.out.println("你瞅瞅");
         }
     }
 }

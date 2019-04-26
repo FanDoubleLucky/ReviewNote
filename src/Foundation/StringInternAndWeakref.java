@@ -2,6 +2,7 @@ package Foundation;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
 
 public class StringInternAndWeakref {
     public static void main(String[] args){
@@ -33,5 +34,8 @@ public class StringInternAndWeakref {
         String s4 = "11";
 //        s3.intern();
         System.out.println(s3==s4);
+        ThreadLocal<String> t = new ThreadLocal<>();
+        t.set("t");
+        t.get();
     }
 }

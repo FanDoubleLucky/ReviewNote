@@ -29,8 +29,11 @@ public class ClassLoaderTest {
         ClassLoader c = ClassLoader.getSystemClassLoader();//获得Application ClassLoader加载器
         System.out.println(c.loadClass("java.lang.Object").newInstance().getClass());
         Class myclass = myLoader.loadClass("Foundation.ClassLoaderTest");
+//        ClassLoaderTest ob = (ClassLoaderTest) myclass.newInstance(); 会直接编译报错
         Object ob = myclass.newInstance();
+        Object cla = c.loadClass("Foundation.ClassLoaderTest").newInstance();
         System.out.println(ob.getClass().getName());
         System.out.println(ob instanceof Foundation.ClassLoaderTest);//fasle，因为ob是自己定义的加载器加载的，而Foundation.ClassLoaderTest是JVM内置的加载器加载的
+        System.out.println(cla instanceof Foundation.ClassLoaderTest);//true，因为是cla是用systemclassloader加载的，它是JVM的APP默认加载器
     }
 }
