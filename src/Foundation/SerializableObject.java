@@ -3,8 +3,10 @@ package Foundation;
 import java.io.Serializable;
 
 public class SerializableObject extends SerializableFather implements Serializable {
-    public String name;
 
+//    private static final long serialVersionUID = -1234567654345L;
+    public Integer id;
+    public String name;
     public String getAddress() {
         return this.address;
     }

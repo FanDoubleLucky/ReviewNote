@@ -1,4 +1,4 @@
-package Foundation;
+package Foundation.ThreadPackage;
 
 /*
 三个线程循环顺序分别打印ABC

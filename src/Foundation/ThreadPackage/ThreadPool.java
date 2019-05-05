@@ -1,4 +1,4 @@
-package Foundation;
+package Foundation.ThreadPackage;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

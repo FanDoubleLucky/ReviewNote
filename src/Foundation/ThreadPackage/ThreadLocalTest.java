@@ -1,4 +1,4 @@
-package Foundation;
+package Foundation.ThreadPackage;
 
 public class ThreadLocalTest {
     //直接生成对象
