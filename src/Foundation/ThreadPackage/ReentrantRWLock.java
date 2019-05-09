@@ -5,26 +5,26 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReentrantRWLock {
 
+    static ReentrantReadWriteLock rw = new ReentrantReadWriteLock();
     public static void main(String[] args) {
-        ReentrantReadWriteLock rw = new ReentrantReadWriteLock();
+
+        MyThread th = new MyThread();
 
         Lock readL = rw.readLock();
         Lock writeL = rw.writeLock();
+
         writeL.lock();
         readL.lock();
-        readL.lock();
-        writeL.lock();
-        readL.unlock();
+        th.start();
+        writeL.unlock();
+//        readL.unlock();
+    }
 
-        try {
-            Thread.currentThread().interrupt();
-            readL.lockInterruptibly();
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    static class MyThread extends Thread{
+        @Override
+        public void run() {
+            rw.readLock().lock();
+            System.out.println("SubThread read lock");
         }
-        System.out.println(rw.isWriteLocked());
-//        writeL.unlock();
-        System.out.println(rw.getReadHoldCount());
     }
 }
